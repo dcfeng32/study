@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace直接映射到dao层的接口不是实体类-->
+<mapper namespace="com.feng.backstage.wechat.dao.WeixinConfigDao">
+
+    <!--通用查询结果 -->
+    <resultMap id="BaseResultMap" type="com.feng.backstage.wechat.entity.WxConfig">
+        <result column="id" property="id"/>
+        <result column="app_id" property="appId"/>
+        <result column="app_secret" property="appSecret"/>
+        <result column="product_id" property="productId"/>
+        <result column="sys_app_id" property="sysAppId"/>
+        <result column="token" property="token"/>
+        <result column="host_url" property="hostUrl"/>
+        <result column="path_type" property="pathType"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <select id="findOneByLimitOne" resultType="com.feng.backstage.wechat.entity.WxConfig">
+		SELECT * FROM wx_config WHERE deleted = 0
+	</select>
+
+
+</mapper>

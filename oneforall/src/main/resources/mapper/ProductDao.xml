@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace直接映射到dao层的接口不是实体类-->
+<mapper namespace="com.feng.backstage.product.dao.ProductDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.feng.backstage.product.entity.Product">
+        <id column="id" property="id"/>
+        <result column="product_name" property="productName"/>
+        <result column="product_key" property="productKey"/>
+        <result column="product_secret" property="productSecret"/>
+        <result column="auth_id" property="authId"/>
+        <result column="auth_secret" property="authSecret"/>
+        <result column="subkey" property="subkey"/>
+        <result column="product_logo_url" property="productLogoUrl"/>
+        <result column="modify_id" property="modifyId"/>
+        <result column="sys_user_id" property="sysUserId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="modify_time" property="modifyTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <select id="findByProductKey" resultType="com.feng.backstage.product.entity.Product">
+        SELECT * FROM product WHERE product_key = #{productKey} and deleted = 0
+    </select>
+
+</mapper>

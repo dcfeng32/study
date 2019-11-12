@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace直接映射到dao层的接口不是实体类-->
+<mapper namespace="com.feng.backstage.admin.dao.AdminDao">
+
+    <!--通用查询结果 -->
+    <resultMap id="BaseResultMap" type="com.feng.backstage.admin.entity.Admin">
+        <id column="id" property="id"/>
+        <result column="ctime" property="ctime"/>
+        <result column="utime" property="utime"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="real_name" property="realName"/>
+        <result column="gender" property="gender"/>
+        <result column="avatar" property="avatar"/>
+        <result column="birthday" property="birthday"/>
+        <result column="mobile" property="mobile"/>
+        <result column="address" property="address"/>
+        <result column="remark" property="remark"/>
+        <result column="sys_user_id" property="sysUserId"/>
+        <result column="sys_user_name" property="sysUserName"/>
+        <result column="is_enable" property="isEnable"/>
+        <result column="tree_path" property="treePath"/>
+        <result column="code" property="code"/>
+    </resultMap>
+
+
+</mapper>
